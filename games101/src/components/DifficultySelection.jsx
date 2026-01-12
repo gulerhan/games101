@@ -1,7 +1,7 @@
 import React from 'react';
 import './DifficultySelection.css';
 
-const DifficultySelection = ({ onSelectDifficulty }) => {
+const DifficultySelection = ({ onSelectDifficulty, onBack }) => {
   const difficulties = [
     { level: 'easy', label: 'Easy', speed: 150 },
     { level: 'normal', label: 'Normal', speed: 100 },
@@ -22,6 +22,11 @@ const DifficultySelection = ({ onSelectDifficulty }) => {
           </button>
         ))}
       </div>
+      {onBack && (
+        <button className="back-button" onClick={onBack}>
+          Back
+        </button>
+      )}
     </div>
   );
 };

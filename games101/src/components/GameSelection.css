@@ -1,0 +1,82 @@
+.game-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.game-selection-title {
+  font-size: 2.5rem;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.game-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  border: 2px solid #000;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.game-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-button:active {
+  transform: translateY(-1px);
+}
+
+.game-icon {
+  font-size: 3rem;
+}
+
+.game-name {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .game-selection-title {
+    font-size: 2rem;
+  }
+  
+  .game-button {
+    padding: 1.2rem 1.5rem;
+    min-width: 150px;
+  }
+  
+  .game-icon {
+    font-size: 2.5rem;
+  }
+  
+  .game-name {
+    font-size: 1rem;
+  }
+  
+  .game-buttons {
+    gap: 1rem;
+  }
+}

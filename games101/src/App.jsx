@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
+import GameSelection from './components/GameSelection';
 import DifficultySelection from './components/DifficultySelection';
 import SnakeGame from './components/SnakeGame';
 import './App.css';
 
 function App() {
+  const [selectedGame, setSelectedGame] = useState(null);
   const [selectedDifficulty, setSelectedDifficulty] = useState(null);
+
+  const handleGameSelect = (gameId) => {
+    setSelectedGame(gameId);
+  };
 
   const handleDifficultySelect = (difficulty) => {
     setSelectedDifficulty(difficulty);
   };
 
-  const handleBackToMenu = () => {
+  const handleBackToGameSelection = () => {
+    setSelectedGame(null);
+    setSelectedDifficulty(null);
+  };
+
+  const handleBackToDifficulty = () => {
     setSelectedDifficulty(null);
   };
 
@@ -20,15 +31,20 @@ function App() {
 
   return (
     <div className="app">
-      {!selectedDifficulty ? (
-        <DifficultySelection onSelectDifficulty={handleDifficultySelect} />
-      ) : (
+      {!selectedGame ? (
+        <GameSelection onSelectGame={handleGameSelect} />
+      ) : !selectedDifficulty ? (
+        <DifficultySelection 
+          onSelectDifficulty={handleDifficultySelect}
+          onBack={handleBackToGameSelection}
+        />
+      ) : selectedGame === 'snake' ? (
         <SnakeGame
           difficulty={selectedDifficulty}
           onGameOver={handleGameOver}
-          onBack={handleBackToMenu}
+          onBack={handleBackToDifficulty}
         />
-      )}
+      ) : null}
     </div>
   );
 }
