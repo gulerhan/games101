@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 import './SnakeGame.css';
 
 const GRID_SIZE = 20;
@@ -139,7 +140,9 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
   return (
     <div className="snake-game-container">
       <div className="game-header">
-        <button className="back-button" onClick={onBack}>Back</button>
+        <button className="back-button" onClick={onBack}>
+          <AiOutlineArrowLeft />
+        </button>
         <div className="score">Score: {score}</div>
         <button className="pause-button" onClick={() => setPaused(!paused)}>
           {paused ? 'Resume' : 'Pause'}

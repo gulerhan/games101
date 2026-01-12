@@ -18,10 +18,9 @@
   gap: 1rem;
 }
 
-.back-button,
-.pause-button {
+.back-button {
   padding: 0.6rem 1.2rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: white;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -29,9 +28,32 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.back-button:hover,
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.back-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.pause-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  background: transparent;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 .pause-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -40,7 +62,7 @@
 .score {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: #000;
   min-width: 120px;
   text-align: center;
 }
@@ -97,7 +119,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,9 +128,8 @@
 
 .game-over-content,
 .paused-content {
-  background: white;
-  padding: 2rem 3rem;
-  border-radius: 16px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);  padding: 2rem 3rem;
+  border-radius: 10px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
@@ -117,14 +137,14 @@
 .game-over-content h2,
 .paused-content h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #9f9f9f;
   margin-bottom: 1rem;
 }
 
 .game-over-content p,
 .paused-content p {
   font-size: 1.3rem;
-  color: #666;
+  color: #979494;
   margin-bottom: 2rem;
 }
 
@@ -146,12 +166,17 @@
 }
 
 .game-over-buttons button:first-child {
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  background: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  color: #000;
 }
 
 .game-over-buttons button:last-child {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
+  background: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  color: #000;}
 
 .game-over-buttons button:hover {
   transform: translateY(-2px);
