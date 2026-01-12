@@ -1,0 +1,75 @@
+.difficulty-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.difficulty-title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.difficulty-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.difficulty-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.difficulty-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.difficulty-button:active {
+  transform: translateY(-1px);
+}
+
+.difficulty-button:nth-child(1) {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.difficulty-button:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.difficulty-button:nth-child(3) {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+@media (max-width: 600px) {
+  .difficulty-title {
+    font-size: 2rem;
+  }
+  
+  .difficulty-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    min-width: 100px;
+  }
+  
+  .difficulty-buttons {
+    gap: 1rem;
+  }
+}
