@@ -74,8 +74,7 @@
   gap: 2px;
   width: 400px;
   height: 400px;
-  background: #fff;
-  border: 3px solid #333;
+  background: #000;
   border-radius: 8px;
   padding: 4px;
 }
@@ -87,18 +86,18 @@
 }
 
 .snake-head {
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  background: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .snake-body {
-  background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+  background: #fff;
   border-radius: 3px;
 }
 
 .food {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: #fff;
   border-radius: 50%;
   animation: pulse 0.5s ease-in-out infinite alternate;
 }
