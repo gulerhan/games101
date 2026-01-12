@@ -14,12 +14,11 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 400px;
   gap: 1rem;
 }
 
 .back-button {
-  padding: 0.6rem 1.2rem;
+  margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
@@ -44,12 +43,14 @@
 }
 
 .pause-button {
+  font-family: 'Press Start 2P', cursive;
+
   padding: 0.6rem 1.2rem;
-  font-size: 1rem;
+  font-size: 0.6rem;
   font-weight: 600;
   color: #000;
   background: transparent;
-  border: 2px solid #000;
+  border: 2px dashed #000;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -60,7 +61,7 @@
 }
 
 .score {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #000;
   min-width: 120px;
@@ -72,10 +73,9 @@
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
   gap: 2px;
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
   background: #000;
-  border-radius: 8px;
   padding: 4px;
 }
 
@@ -154,6 +154,8 @@
 }
 
 .game-over-buttons button {
+  font-family: 'Press Start 2P', cursive;
+
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
@@ -166,14 +168,14 @@
 
 .game-over-buttons button:first-child {
   background: transparent;
-  border: 2px solid #000;
+  border: 2px dashed #000;
   border-radius: 0;
   color: #000;
 }
 
 .game-over-buttons button:last-child {
   background: transparent;
-  border: 2px solid #000;
+  border: 2px dashed #000;
   border-radius: 0;
   color: #000;}
 
@@ -185,7 +187,7 @@
 .game-instructions {
   text-align: center;
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   margin-top: 0.5rem;
 }
 
@@ -197,7 +199,7 @@
   
   .game-header {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
   
   .score {

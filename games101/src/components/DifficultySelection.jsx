@@ -6,9 +6,9 @@ const DifficultySelection = ({ onSelectDifficulty, onBack }) => {
   const [selectedDifficulty, setSelectedDifficulty] = useState(null);
   
   const difficulties = [
-    { level: 'easy', label: 'Easy', speed: 150 },
+    { level: 'easy', label: 'Kolay', speed: 150 },
     { level: 'normal', label: 'Normal', speed: 100 },
-    { level: 'hard', label: 'Hard', speed: 60 }
+    { level: 'hard', label: 'Zor', speed: 60 }
   ];
 
   const handlePlay = () => {

@@ -16,7 +16,6 @@ const GameSelection = ({ onSelectGame }) => {
             className="game-button"
             onClick={() => onSelectGame(game.id)}
           >
-            <span className="game-icon">{game.icon}</span>
             <span className="game-name">{game.name}</span>
           </button>
         ))}

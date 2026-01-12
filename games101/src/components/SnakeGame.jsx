@@ -145,7 +145,7 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
         </button>
         <div className="score">Score: {score}</div>
         <button className="pause-button" onClick={() => setPaused(!paused)}>
-          {paused ? 'Resume' : 'Pause'}
+          {paused ? 'Başlat' : 'Durdur'}
         </button>
       </div>
       
@@ -177,11 +177,11 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
       {gameOver && (
         <div className="game-over-overlay">
           <div className="game-over-content">
-            <h2>Game Over!</h2>
-            <p>Final Score: {score}</p>
+            <h2>Oyun Bitti!</h2>
+            <p>Skorun: {score}</p>
             <div className="game-over-buttons">
-              <button onClick={resetGame}>Play Again</button>
-              <button onClick={onBack}>Back to Menu</button>
+              <button onClick={resetGame}>Tekrar Oyna</button>
+              <button onClick={onBack}>Menüye Dön</button>
             </div>
           </div>
         </div>
@@ -197,7 +197,7 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
       )}
 
       <div className="game-instructions">
-        <p>Use Arrow Keys to Move | Space to Pause</p>
+        <p>Hareket etmek için ok tuşlarını kullanın</p>
       </div>
     </div>
   );
