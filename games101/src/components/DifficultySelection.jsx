@@ -10,7 +10,7 @@ const DifficultySelection = ({ onSelectDifficulty, onBack }) => {
 
   return (
     <div className="difficulty-selection">
-      <h1 className="difficulty-title">Choose Difficulty</h1>
+      <h1 className="difficulty-title">Zorluk Seç</h1>
       <div className="difficulty-buttons">
         {difficulties.map((difficulty) => (
           <button
