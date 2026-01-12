@@ -15,7 +15,6 @@ function App() {
   };
 
   const handleGameOver = (finalScore) => {
-    // Game over logic can be extended here
     console.log('Game Over! Final Score:', finalScore);
   };
 

@@ -4,14 +4,13 @@
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .difficulty-title {
   font-size: 2.5rem;
-  color: #333;
+  color: #000;
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
@@ -25,12 +24,11 @@
 }
 
 .difficulty-button {
-  padding: 1rem 2.5rem;
-  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: white;
-  border: none;
-  border-radius: 12px;
+  color: #000;
+  border: 2px solid #000;
   cursor: pointer;
   transition: all 0.3s ease;
   min-width: 120px;
@@ -47,15 +45,15 @@
 }
 
 .difficulty-button:nth-child(1) {
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  background: transparent;
 }
 
 .difficulty-button:nth-child(2) {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: transparent;
 }
 
 .difficulty-button:nth-child(3) {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: transparent;
 }
 
 @media (max-width: 600px) {

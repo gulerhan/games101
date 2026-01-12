@@ -4,7 +4,7 @@
   align-items: center;
   gap: 1.5rem;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: transparent;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
@@ -52,14 +52,14 @@
   gap: 2px;
   width: 400px;
   height: 400px;
-  background: #f0f0f0;
+  background: #fff;
   border: 3px solid #333;
   border-radius: 8px;
   padding: 4px;
 }
 
 .cell {
-  background: white;
+  background: #000;
   border-radius: 2px;
   transition: all 0.1s ease;
 }
