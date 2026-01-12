@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './DifficultySelection.css';
 
 const DifficultySelection = ({ onSelectDifficulty, onBack }) => {
+  const [selectedDifficulty, setSelectedDifficulty] = useState(null);
+  
   const difficulties = [
     { level: 'easy', label: 'Easy', speed: 150 },
     { level: 'normal', label: 'Normal', speed: 100 },
     { level: 'hard', label: 'Hard', speed: 60 }
   ];
+
+  const handlePlay = () => {
+    if (selectedDifficulty) {
+      onSelectDifficulty(selectedDifficulty);
+    }
+  };
 
   return (
     <div className="difficulty-selection">
@@ -15,13 +23,18 @@ const DifficultySelection = ({ onSelectDifficulty, onBack }) => {
         {difficulties.map((difficulty) => (
           <button
             key={difficulty.level}
-            className="difficulty-button"
-            onClick={() => onSelectDifficulty(difficulty)}
+            className={`difficulty-button ${selectedDifficulty?.level === difficulty.level ? 'selected' : ''}`}
+            onClick={() => setSelectedDifficulty(difficulty)}
           >
             {difficulty.label}
           </button>
         ))}
       </div>
+      {selectedDifficulty && (
+        <button className="play-button" onClick={handlePlay}>
+          Oyna
+        </button>
+      )}
       {onBack && (
         <button className="back-button" onClick={onBack}>
           Back
