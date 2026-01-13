@@ -131,6 +131,8 @@
   align-items: center;
   z-index: 1000;
   border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* veya rgba(0, 0, 0, 0.7) daha koyu için */
+
 }
 
 .game-over-content,

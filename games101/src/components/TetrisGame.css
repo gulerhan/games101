@@ -1,0 +1,31 @@
+.tetris-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.tetris-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tetris-title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.tetris-placeholder {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.05);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.back-button {
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}

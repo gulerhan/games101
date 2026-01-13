@@ -3,7 +3,8 @@ import './GameSelection.css';
 
 const GameSelection = ({ onSelectGame }) => {
   const games = [
-    { id: 'snake', name: 'Yılan Oyunu', icon: '🐍' }
+    { id: 'snake', name: 'Yılan Oyunu', icon: '🐍' },
+    { id: 'tetris', name: 'Tetris', icon: '🧱' }
   ];
 
   return (
