@@ -9,31 +9,31 @@ const CELL_SIZE = 30;
 const TETROMINOES = [
   {
     shape: [[1, 1, 1, 1]],
-    color: '#00f0f0'
+    color: '#ffffff'
   },
   {
     shape: [[1, 1], [1, 1]],
-    color: '#f0f000'
+    color: '#ffffff'
   },
   {
     shape: [[0, 1, 0], [1, 1, 1]],
-    color: '#a000f0'
+    color: '#ffffff'
   },
   {
     shape: [[0, 1, 1], [1, 1, 0]],
-    color: '#00f000'
+    color: '#ffffff'
   },
   {
     shape: [[1, 1, 0], [0, 1, 1]],
-    color: '#f00000'
+    color: '#ffffff'
   },
   {
     shape: [[1, 0, 0], [1, 1, 1]],
-    color: '#0000f0'
+    color: '#ffffff'
   },
   {
     shape: [[0, 0, 1], [1, 1, 1]],
-    color: '#f0a000'
+    color: '#ffffff'
   }
 ];
 
