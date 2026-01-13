@@ -68,6 +68,14 @@
   text-align: center;
 }
 
+.high-score {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
 .game-board {
   display: grid;
   grid-template-columns: repeat(20, 1fr);
@@ -145,6 +153,13 @@
   font-size: 1.3rem;
   color: #979494;
   margin-bottom: 2rem;
+}
+
+.high-score-overlay {
+  font-size: 1.1rem;
+  color: #cfcfcf;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
 .game-over-buttons {

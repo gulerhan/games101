@@ -12,6 +12,14 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
   const [direction, setDirection] = useState(INITIAL_DIRECTION);
   const [food, setFood] = useState(INITIAL_FOOD);
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(() => {
+    try {
+      const v = window.localStorage.getItem('snake-highscore');
+      return v ? parseInt(v, 10) : 0;
+    } catch (e) {
+      return 0;
+    }
+  });
   const [gameOver, setGameOver] = useState(false);
   const [paused, setPaused] = useState(false);
   const scoreRef = useRef(0);
@@ -88,6 +96,18 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
     });
   }, [direction, food, gameOver, paused, checkCollision, generateFood]);
 
+  // Persist high score whenever score exceeds it
+  useEffect(() => {
+    if (score > highScore) {
+      setHighScore(score);
+      try {
+        window.localStorage.setItem('snake-highscore', String(score));
+      } catch (e) {
+        // ignore storage errors
+      }
+    }
+  }, [score, highScore]);
+
   useEffect(() => {
     if (gameOver) {
       onGameOverRef.current(scoreRef.current);
@@ -143,7 +163,9 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
         <button className="back-button" onClick={onBack}>
           <AiOutlineArrowLeft />
         </button>
-        <div className="score">Score: {score}</div>
+        <div>
+          <div className="score">Skor: {score}</div>
+        </div>
         <button className="pause-button" onClick={() => setPaused(!paused)}>
           {paused ? 'Başlat' : 'Durdur'}
         </button>
@@ -179,6 +201,7 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
           <div className="game-over-content">
             <h2>Oyun Bitti!</h2>
             <p>Skorun: {score}</p>
+            <p className="high-score-overlay">En Yüksek Skor: {highScore}</p>
             <div className="game-over-buttons">
               <button onClick={resetGame}>Tekrar Oyna</button>
               <button onClick={onBack}>Menüye Dön</button>
@@ -190,8 +213,8 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
       {paused && !gameOver && (
         <div className="paused-overlay">
           <div className="paused-content">
-            <h2>Paused</h2>
-            <p>Press Space to Resume</p>
+            <h2>Durduruldu</h2>
+            <p>Devam etmek için boşluğu kullan</p>
           </div>
         </div>
       )}
