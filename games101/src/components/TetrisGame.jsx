@@ -42,6 +42,14 @@ const TetrisGame = ({ difficulty, onGameOver, onBack }) => {
   const [currentPiece, setCurrentPiece] = useState(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(() => {
+    try {
+      const v = window.localStorage.getItem('tetris-highscore');
+      return v ? parseInt(v, 10) : 0;
+    } catch (e) {
+      return 0;
+    }
+  });
   const [gameOver, setGameOver] = useState(false);
   const [paused, setPaused] = useState(false);
   const gameLoopRef = useRef(null);
@@ -55,6 +63,18 @@ const TetrisGame = ({ difficulty, onGameOver, onBack }) => {
   useEffect(() => {
     scoreRef.current = score;
   }, [score]);
+
+  // Persist high score whenever score exceeds it
+  useEffect(() => {
+    if (score > highScore) {
+      setHighScore(score);
+      try {
+        window.localStorage.setItem('tetris-highscore', String(score));
+      } catch (e) {
+        // ignore storage errors
+      }
+    }
+  }, [score, highScore]);
 
   const createPiece = useCallback(() => {
     const randomIndex = Math.floor(Math.random() * TETROMINOES.length);
@@ -279,6 +299,7 @@ const TetrisGame = ({ difficulty, onGameOver, onBack }) => {
     setCurrentPiece(null);
     setPosition({ x: 0, y: 0 });
     setScore(0);
+    scoreRef.current = 0;
     setGameOver(false);
     setPaused(false);
   };
@@ -316,6 +337,7 @@ const TetrisGame = ({ difficulty, onGameOver, onBack }) => {
           <div className="game-over-content">
             <h2>Oyun Bitti!</h2>
             <p>Skorun: {score}</p>
+            <p className="high-score-overlay">En Yüksek Skor: {highScore}</p>
             <div className="game-over-buttons">
               <button onClick={resetGame}>Tekrar Oyna</button>
               <button onClick={onBack}>Menüye Dön</button>

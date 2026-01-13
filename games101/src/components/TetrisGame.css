@@ -124,6 +124,13 @@
   margin-bottom: 2rem;
 }
 
+.high-score-overlay {
+  font-size: 1.1rem;
+  color: #cfcfcf;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
 .game-over-buttons {
   display: flex;
   gap: 1rem;
