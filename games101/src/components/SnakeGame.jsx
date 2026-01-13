@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { AiFillBackward   } from 'react-icons/ai';
 import './SnakeGame.css';
 
 const GRID_SIZE = 20;
@@ -161,7 +161,7 @@ const SnakeGame = ({ difficulty, onGameOver, onBack }) => {
     <div className="snake-game-container">
       <div className="game-header">
         <button className="back-button" onClick={onBack}>
-          <AiOutlineArrowLeft />
+          <AiFillBackward   />
         </button>
         <div>
           <div className="score">Skor: {score}</div>

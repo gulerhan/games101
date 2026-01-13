@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { AiFillBackward  } from 'react-icons/ai';
 import './DifficultySelection.css';
 
 const DifficultySelection = ({ onSelectDifficulty, onBack }) => {
@@ -38,7 +38,7 @@ const DifficultySelection = ({ onSelectDifficulty, onBack }) => {
       )}
       {onBack && (
         <button className="back-button" onClick={onBack}>
-          <AiOutlineArrowLeft />
+          <AiFillBackward  />
         </button>
       )}
     </div>
