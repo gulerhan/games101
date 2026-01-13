@@ -18,12 +18,12 @@
 }
 
 .back-button {
+  padding: 0;
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
+  border: 2px dashed #000;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
