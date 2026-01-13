@@ -198,7 +198,17 @@ const TetrisGame = ({ difficulty, onGameOver, onBack }) => {
 
   useEffect(() => {
     const handleKeyPress = (e) => {
-      if (gameOver || paused || !currentPiece) return;
+      if (gameOver) return;
+
+      // Space tuşu her zaman çalışmalı (pause/unpause için)
+      if (e.key === ' ') {
+        e.preventDefault();
+        setPaused(prev => !prev);
+        return;
+      }
+
+      // Diğer tuşlar paused durumunda çalışmamalı
+      if (paused || !currentPiece) return;
 
       switch (e.key) {
         case 'ArrowLeft':
@@ -234,10 +244,6 @@ const TetrisGame = ({ difficulty, onGameOver, onBack }) => {
             }
             return prev;
           });
-          break;
-        case ' ':
-          e.preventDefault();
-          setPaused(prev => !prev);
           break;
         default:
           break;
