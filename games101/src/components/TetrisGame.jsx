@@ -291,16 +291,14 @@ const TetrisGame = ({ difficulty, onGameOver, onBack }) => {
         </button>
       </div>
 
-      <div className="tetris-board" style={{ width: BOARD_WIDTH * CELL_SIZE, height: BOARD_HEIGHT * CELL_SIZE }}>
+      <div className="tetris-board">
         {displayBoard.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
             <div
               key={`${rowIndex}-${colIndex}`}
               className="tetris-cell"
               style={{
-                backgroundColor: cell || '#000',
-                width: CELL_SIZE,
-                height: CELL_SIZE
+                backgroundColor: cell || '#000'
               }}
             />
           ))
