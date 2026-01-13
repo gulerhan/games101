@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import GameSelection from './components/GameSelection';
 import DifficultySelection from './components/DifficultySelection';
 import SnakeGame from './components/SnakeGame';
+import TetrisGame from './components/TetrisGame';
 import './App.css';
 
 function App() {
@@ -40,6 +41,12 @@ function App() {
         />
       ) : selectedGame === 'snake' ? (
         <SnakeGame
+          difficulty={selectedDifficulty}
+          onGameOver={handleGameOver}
+          onBack={handleBackToDifficulty}
+        />
+      ) : selectedGame === 'tetris' ? (
+        <TetrisGame
           difficulty={selectedDifficulty}
           onGameOver={handleGameOver}
           onBack={handleBackToDifficulty}
