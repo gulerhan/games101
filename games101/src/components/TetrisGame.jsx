@@ -334,7 +334,7 @@ const TetrisGame = ({ difficulty, onGameOver, onBack }) => {
       )}
 
       <div className="game-instructions">
-        <p>Hareket: Ok Tuşları | Döndür: Yukarı Ok | Durdur: Boşluk</p>
+        <p>Hareket ettirmek için ok tuşlarını kullanın</p>
       </div>
     </div>
   );
